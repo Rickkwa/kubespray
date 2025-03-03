@@ -40,7 +40,7 @@ spec:
             memory: {{ nodelocaldns_memory_requests }}
         args: [ "-localip", "{{ nodelocaldns_ip }}", "-conf", "/etc/coredns/Corefile", "-upstreamsvc", "coredns", "-skipteardown" ]
         ports:
-        - containerPort: 9255
+        - containerPort: {{ nodelocaldns_secondary_prometheus_port }}
           name: metrics
           protocol: TCP
         securityContext:

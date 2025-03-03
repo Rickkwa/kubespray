@@ -49,7 +49,7 @@ spec:
         - -skipteardown
 {% endif %}
         ports:
-        - containerPort: 9253
+        - containerPort: {{ nodelocaldns_prometheus_port }}
           name: metrics
           protocol: TCP
 {% if not enable_nodelocaldns_secondary %}
